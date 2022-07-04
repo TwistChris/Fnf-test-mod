@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="chaselect.png">
+	<!-- Created with Adobe Animate version 18.0.2.126 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="chaselect white0000" x="0" y="0" width="720" height="720"/>
+	<SubTexture name="chaselect white0001" x="720" y="0" width="720" height="720"/>
+	<SubTexture name="chaselect white0002" x="0" y="720" width="720" height="720"/>
+	<SubTexture name="chaselect basic0000" x="720" y="720" width="720" height="720"/>
+	<SubTexture name="chaselect basic0001" x="720" y="720" width="720" height="720"/>
+	<SubTexture name="chaselect basic0002" x="0" y="1440" width="720" height="720"/>
+	<SubTexture name="chaselect basic0003" x="720" y="1440" width="720" height="720"/>
+	<SubTexture name="chaselect basic0004" x="720" y="1440" width="720" height="720"/>
+	<SubTexture name="chaselect basic0005" x="720" y="1440" width="720" height="720"/>
+	<SubTexture name="chaselect basic0006" x="0" y="2160" width="720" height="720"/>
+	<SubTexture name="chaselect basic0007" x="0" y="2160" width="720" height="720"/>
+	<SubTexture name="chaselect basic0008" x="0" y="2160" width="720" height="720"/>
+</TextureAtlas>
