@@ -1,9 +1,10 @@
 package;
 
 #if android
-import android.Tools;
 import android.Permissions;
 import android.PermissionsList;
+import android.os.Build;
+import android.os.Environment;
 #end
 import lime.app.Application;
 import openfl.events.UncaughtErrorEvent;
@@ -24,17 +25,10 @@ using StringTools;
 
 class SUtil
 {
-	#if android
-	private static var aDir:String = null; // android dir
-	#end
-
 	public static function getPath():String
 	{
 		#if android
-		if (aDir != null && aDir.length > 0)
-			return aDir;
-		else
-			return aDir = Tools.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/';
+		return Environment.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/';
 		#else
 		return '';
 		#end
