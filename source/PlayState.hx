@@ -508,8 +508,8 @@ class PlayState extends MusicBeatState
 				}
 
                         case 'colas':
-				bgcolas:BGSprite = new BGSprite('colas/stageback', -600, -200, 0.9, 0.9);
-				add(bg);
+				bgcolas = new BGSprite('colas/stageback', -600, -200, 0.9, 0.9);
+				add(bgcolas);
 
 			case 'spooky': //Week 2
 				//SPOOKEEZ KIDS
