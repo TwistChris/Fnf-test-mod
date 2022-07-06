@@ -1,0 +1,11 @@
+{
+	
+	"image": "Menu_Minus",
+	"position": [
+		30,
+		0
+	],
+	"scale": 0.9,
+	"idle_anim": "BF idle dance white",
+	"confirm_anim": "BF HEY!!"
+}
