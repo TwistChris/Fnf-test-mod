@@ -81,8 +81,15 @@ class CreditsState extends MusicBeatState
 		#end
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
-                        ['The Build TC Creator'],
-                        ['Twist Chris',             'twistchris',	    'Make An Edited Build of Psych Engine with Android Support',	 'https://youtube.com/channel/UC6ApalUA5gPPDNJBmrMgy4Q',        '0xFFFFFFFF'],
+                        ['Youtube Panic Crew'],
+                        ['Matt',	'test',				'Director/Artist/Animator of Youtube Panic',	'https://youtube.com/channel/UCc2NDZssa-KbMoXILpLg2lA', 	'444444'],
+                        ['Jaja Blg',	'test',				'Artist/Animator/Charter of Youtube Panic',	'https://youtube.com/channel/UC7TWtP7mj3zIgC7NWlVsOmQ', 	'444444'],
+                        ['Skittle',	'test',				'Artist/Animator of Youtube Panic',	'https://youtube.com/channel/UCbJ0XXTb4REpsJwwuFJ5Isg', 	'444444'],
+                        ['Puppet Gaming',	'test',				'Programmer of Youtube Panic',	'https://youtube.com/channel/UCTeJVTcLiHEbicjucZ5B9eA', 	'444444'],
+                        ['Cotalie',	'test',				'Artist/Animator of Youtube Panic',	'', 	'444444'],
+                        ['Twist Chris',             'twistchris',	    'Programmer/Composer of Youtube Panic/nAnd Who Draw The Background For Colas Bim',	 'https://youtube.com/channel/UC6ApalUA5gPPDNJBmrMgy4Q',        '0xFFFFFFFF'],
+                        ['Flame',	'test',				'Artist/Animator of Youtube Panic',	'https://youtube.com/channel/UC08qmgCraUtLAkwJABL9R7Q', 	'444444'],
+                        ['The Wadi',	'test',				'Programmer of Youtube Panic',	'https://youtube.com/c/TheWadi29', 	'444444'],
                         [''],
 			['Android Support'],
 			['Saw (M.A. Jigsaw)',	'saw',				'Main Programmer of Psych Engine\nWith Android Support',	'https://www.youtube.com/channel/UC2Sk7vtPzOvbVzdVTWrribQ', 	'444444'],
