@@ -208,8 +208,6 @@ class PlayState extends MusicBeatState
 	var dialogue:Array<String> = ['blah blah blah', 'coolswag'];
 	var dialogueJson:DialogueFile = null;
 
-        var bgcolas:BGSprite;
-
 	var dadbattleBlack:BGSprite;
 	var dadbattleLight:BGSprite;
 	var dadbattleSmokes:FlxSpriteGroup;
@@ -508,8 +506,8 @@ class PlayState extends MusicBeatState
 				}
 
                         case 'colas':
-				bgcolas = new BGSprite('bgcolas', -600, -200, 0.9, 0.9);
-				add(bgcolas);
+				var bg:BGSprite = new BGSprite('bgcolas', -600, -200, 0.9, 0.9);
+				add(bg);
 
 			case 'spooky': //Week 2
 				//SPOOKEEZ KIDS
