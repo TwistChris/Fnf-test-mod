@@ -135,8 +135,8 @@ class CharacterSelection extends MusicBeatState
         if (iconArray[curSelected].animation.curAnim.name == 'idle' && iconArray[curSelected].animation.curAnim.finished && doesntExist)
             iconArray[curSelected].playAnim('idle', true);
 
-        var upP = controls.LEFT_P;
-        var downP = controls.RIGHT_P;
+        var upP = controls.UI_LEFT_P;
+        var downP = controls.UI_RIGHT_P;
         var accepted = controls.ACCEPT;
 
         if (!alreadySelected)
