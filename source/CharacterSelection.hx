@@ -44,10 +44,10 @@ class CharacterSelection extends MusicBeatState
     private var iconArray:Array<Boyfriend> = [];
 
    var nameIcons:Array<String> = [
-        "Boyfriend",
-        "Boyfriend Beta",
-        "Boyfriend Blue",
-        "Boyfriend Mean"
+        "bf",
+        "blue",
+        "beta",
+        "mean"
     ];
 
     var names:Array<String> = [
@@ -121,7 +121,7 @@ class CharacterSelection extends MusicBeatState
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
 
-        #if mobileC
+        #if android
         addVirtualPad(FULL, A_B);	
         #end
 
