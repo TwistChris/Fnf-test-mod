@@ -61,7 +61,7 @@ class CharacterSelection extends MusicBeatState
 
     override function create() 
     {
-        menuBG = new FlxSprite().loadGraphic(Paths.image('BG4'));
+        menuBG = new FlxSprite().loadGraphic(Paths.image('BG5'));
         menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
         menuBG.updateHitbox();
         menuBG.screenCenter();
@@ -231,15 +231,15 @@ class CharacterSelection extends MusicBeatState
                 switch (daSelected)
                 {
                     case "bf":
-                        menuBG.loadGraphic('BG1');
+                        menuBG.loadGraphic(Paths.image('BG1'));
                     case "beta":
-                        menuBG.loadGraphic('BG2');
+                        menuBG.loadGraphic(Paths.image('BG2'));
                     case "blue":
-                        menuBG.loadGraphic('BG3');
+                        menuBG.loadGraphic(Paths.image('BG3'));
                     case "mean":
-                        menuBG.loadGraphic('BG4');
+                        menuBG.loadGraphic(Paths.image('BG4'));
                     default:
-                        menuBG.loadGraphic('BG5');
+                        menuBG.loadGraphic(Paths.image('BG5'));
                 }
 
                 //shitCharacter.updateHitbox();
