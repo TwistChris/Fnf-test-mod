@@ -18,8 +18,6 @@ import Character.Character;
 import HealthIcon.HealthIcon;
 import flixel.ui.FlxBar;
 
-using StringTools;
-
 typedef CharacterMenu = {
     var name:String;
     var characterName:String;
