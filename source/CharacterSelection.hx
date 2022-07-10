@@ -26,7 +26,7 @@ typedef CharacterMenu = {
 
 class CharacterSelection extends MusicBeatState
 {
-    var menuItems:Array<String> = ['bf', 'bf-christmas', 'bf-car'];
+    var menuItems:Array<String> = ['bf', 'beta', 'blue', 'mean'];
     var curSelected:Int = 0;
     var txtDescription:FlxText;
     var shitCharacter:FlxSprite;
@@ -45,8 +45,9 @@ class CharacterSelection extends MusicBeatState
 
     var names:Array<String> = [
         "Boyfriend",
-        "Boyfriend in Christmas Clothing",
-        "Boyfriend on a Car"
+        "Boyfriend Beta",
+        "Boyfriend Blue",
+        "Boyfriend Mean"
     ];
 
     var txtOptionTitle:FlxText;
@@ -104,12 +105,6 @@ class CharacterSelection extends MusicBeatState
         charSelHeaderText.screenCenter(X);
         add(charSelHeaderText);
 
-        var arrows:FlxSprite = new FlxSprite().loadGraphic(Paths.image('arrows'));
-        arrows.setGraphicSize(Std.int(arrows.width * 1.1));
-        arrows.screenCenter();
-        arrows.antialiasing = true;
-        add(arrows);
-
         txtOptionTitle = new FlxText(FlxG.width * 0.7, 10, 0, "", 32);
         txtOptionTitle.setFormat("assets/fonts/pdark.ttf", 32, FlxColor.WHITE, RIGHT);
         txtOptionTitle.alpha = 0.7;
@@ -118,6 +113,10 @@ class CharacterSelection extends MusicBeatState
         changeSelection();
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
+
+        #if mobileC
+        addVirtualPad(FULL, A_B);	
+        #end
 
         super.create();
     }
@@ -226,16 +225,14 @@ class CharacterSelection extends MusicBeatState
                 {
                     case "bf":
                         menuBG.loadGraphic('BG1');
-                        menuBG.color = 0x87ceeb;
-                    case "bf-christmas":
+                    case "beta":
                         menuBG.loadGraphic('BG2');
-                        menuBG.color = 0xFFFFFF;
-                    case "bf-car":
-                        menuBG.loadGraphic('BG1');
-				        menuBG.color = 0xFF00FF;
-                    default:
+                    case "blue":
+                        menuBG.loadGraphic('BG3');
+                    case "mean":
                         menuBG.loadGraphic('BG4');
-				        menuBG.color = 0xFFFFFF;
+                    default:
+                        menuBG.loadGraphic('BG5');
                 }
 
                 //shitCharacter.updateHitbox();
