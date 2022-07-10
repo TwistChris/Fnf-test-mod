@@ -26,7 +26,7 @@ typedef CharacterMenu = {
 
 class CharacterSelection extends MusicBeatState
 {
-    var menuItems:Array<String> = [];
+    var menuItems:Array<String> = ['bf', 'bf-christmas', 'bf-car'];
     var curSelected:Int = 0;
     var txtDescription:FlxText;
     var shitCharacter:FlxSprite;
@@ -39,29 +39,26 @@ class CharacterSelection extends MusicBeatState
 
     private var grpMenu:FlxTypedGroup<Alphabet>;
     private var grpMenuImage:FlxTypedGroup<FlxSprite>;
-    var nameIcons:Array<String> = [];
     var alreadySelected:Bool = false;
     var doesntExist:Bool = false;
     private var iconArray:Array<Boyfriend> = [];
 
-    var names:Array<String> = [];
+    var names:Array<String> = [
+        "Boyfriend",
+        "Boyfriend in Christmas Clothing",
+        "Boyfriend on a Car"
+    ];
 
     var txtOptionTitle:FlxText;
 
     override function create() 
     {
-        menuBG = new FlxSprite().loadGraphic(Paths.image('BG5'));
+        menuBG = new FlxSprite().loadGraphic(Paths.image('BG4'));
         menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
         menuBG.updateHitbox();
         menuBG.screenCenter();
         menuBG.antialiasing = true;
         add(menuBG);
-
-        nameIcons = CoolUtil.coolTextFile(Paths.txt('icons'));
-
-        names = CoolUtil.coolTextFile(Paths.txt('names'));
-        
-        menuItems = CoolUtil.coolTextFile(Paths.txt('charselect'));
 
         grpMenu = new FlxTypedGroup<Alphabet>();
         add(grpMenu);
@@ -107,18 +104,20 @@ class CharacterSelection extends MusicBeatState
         charSelHeaderText.screenCenter(X);
         add(charSelHeaderText);
 
+        var arrows:FlxSprite = new FlxSprite().loadGraphic(Paths.image('arrows'));
+        arrows.setGraphicSize(Std.int(arrows.width * 1.1));
+        arrows.screenCenter();
+        arrows.antialiasing = true;
+        add(arrows);
+
         txtOptionTitle = new FlxText(FlxG.width * 0.7, 10, 0, "", 32);
         txtOptionTitle.setFormat("assets/fonts/pdark.ttf", 32, FlxColor.WHITE, RIGHT);
         txtOptionTitle.alpha = 0.7;
         add(txtOptionTitle);
 
-        changeSelection(0);
+        changeSelection();
 
         cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
-
-        #if mobileC
-        addVirtualPad(FULL, A_B);	
-        #end
 
         super.create();
     }
@@ -136,8 +135,8 @@ class CharacterSelection extends MusicBeatState
         if (iconArray[curSelected].animation.curAnim.name == 'idle' && iconArray[curSelected].animation.curAnim.finished && doesntExist)
             iconArray[curSelected].playAnim('idle', true);
 
-        var upP = controls.UI_LEFT_P;
-        var downP = controls.UI_RIGHT_P;
+        var upP = controls.LEFT_P;
+        var downP = controls.RIGHT_P;
         var accepted = controls.ACCEPT;
 
         if (!alreadySelected)
@@ -156,6 +155,7 @@ class CharacterSelection extends MusicBeatState
                 {
                     alreadySelected = true;
                     var daSelected:String = menuItems[curSelected];
+                    var daSelected:String = menuItems[curSelected];
                     PlayState.hasPlayedOnce = false;
                     if (menuItems[curSelected] != 'bf')
                         PlayState.hasPlayedOnce = true;
@@ -163,7 +163,6 @@ class CharacterSelection extends MusicBeatState
                         PlayState.SONG.player1 = daSelected;
                         PlayState.bfsel = daSelected;
                         StoryMenuState.bfsel = daSelected;
-
 
                     FlxFlicker.flicker(iconArray[curSelected], 0);
                     new FlxTimer().start(1, function(tmr:FlxTimer)
@@ -173,7 +172,9 @@ class CharacterSelection extends MusicBeatState
                 }
             
             if (controls.BACK)
-                FlxG.switchState(new MainMenuState());
+                {
+                    FlxG.switchState(new MainMenuState());
+                }
         }
 
         super.update(elapsed);
@@ -189,7 +190,7 @@ class CharacterSelection extends MusicBeatState
                 curSelected = 0;
 
             var otherInt:Int = 0;
-            
+
             for (i in 0...iconArray.length)
                 {
                     iconArray[i].alpha = 1;
@@ -223,16 +224,18 @@ class CharacterSelection extends MusicBeatState
 
                 switch (daSelected)
                 {
-                    case 'bf':
-                        menuBG.loadGraphic(Paths.image('BG1'));
-                    case 'beta':
-                        menuBG.loadGraphic(Paths.image('BG2'));
-                    case 'blue':
-                        menuBG.loadGraphic(Paths.image('BG3'));
-                    case 'mean':
-                        menuBG.loadGraphic(Paths.image('BG4'));
+                    case "bf":
+                        menuBG.loadGraphic('BG1');
+                        menuBG.color = 0x87ceeb;
+                    case "bf-christmas":
+                        menuBG.loadGraphic('BG2');
+                        menuBG.color = 0xFFFFFF;
+                    case "bf-car":
+                        menuBG.loadGraphic('BG1');
+				        menuBG.color = 0xFF00FF;
                     default:
-                        menuBG.loadGraphic(Paths.image('BG5'));
+                        menuBG.loadGraphic('BG4');
+				        menuBG.color = 0xFFFFFF;
                 }
 
                 //shitCharacter.updateHitbox();
@@ -253,7 +256,7 @@ class CharacterSelection extends MusicBeatState
                 healthBar.visible = false;
                 // healthBar
                 add(healthBar);
-                icon = new HealthIcon(nameIcons[curSelected], true);
+                icon = new HealthIcon(menuItems[curSelected], true);
                 icon.y = healthBar.y - (icon.height / 2);
                 icon.screenCenter(X);
                 icon.setGraphicSize(-4);
