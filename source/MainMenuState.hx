@@ -118,7 +118,8 @@ class MainMenuState extends MusicBeatState
 			menuItem.ID = i;
 			menuItem.screenCenter(X);
                         if(optionShit[i] == "chaselect") {
-				menuItem.y -= 392;
+				menuItem.y -= 340;
+                                menuItem.x -= -40;
 			}
 			menuItems.add(menuItem);
 			var scr:Float = (optionShit.length - 4) * 0.135;
