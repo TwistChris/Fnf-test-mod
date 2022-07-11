@@ -47,7 +47,7 @@ class CharacterSelection extends MusicBeatState
         "bf",
         "bf-old",
         "bf",
-        "bf-old"
+        "bf-mean"
     ];
 
     var names:Array<String> = [
