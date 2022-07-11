@@ -1,0 +1,11 @@
+{
+	
+	"image": "Menu_Minus",
+	"position": [
+		38,
+		-6
+	],
+	"scale": 0.95,
+	"idle_anim": "BF 3 idle dance white",
+	"confirm_anim": "BF 3 HEY!!"
+}
