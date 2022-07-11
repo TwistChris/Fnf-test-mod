@@ -45,9 +45,9 @@ class CharacterSelection extends MusicBeatState
 
    var nameIcons:Array<String> = [
         "bf",
-        "blue",
-        "beta",
-        "mean"
+        "bf-old",
+        "bf",
+        "bf-old"
     ];
 
     var names:Array<String> = [
